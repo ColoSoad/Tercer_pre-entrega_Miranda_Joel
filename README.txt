@@ -14,7 +14,7 @@
 Front-End utilizado
 - HTML 5
 - CSS 3
-- Bootstrap
+- Starbootstrap
 
 
 Back-End utilizado
