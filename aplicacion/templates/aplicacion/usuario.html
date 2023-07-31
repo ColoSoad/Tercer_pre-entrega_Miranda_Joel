@@ -1,0 +1,37 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+
+{% block titulo %}
+    USUARIOS
+{% endblock titulo %}
+
+
+{% block cabecera %}
+    <p style="color: red;">Listado de USUARIOS</p>
+{% endblock cabecera %}
+    
+{% block contenido %}
+<section class="features-icons bg-black text-center">
+    <table class="table">
+        <thead>
+            <tr>               
+                <th><p style="color: red;">ID</p></th>
+                <th><p style="color: red;">Nombre</p></th>
+                <th><p style="color: red;">Apellido</p></th>
+                <th><p style="color: red;">Email</p></th>                        
+            </tr>
+        </thead>
+        <tbody>
+        {% for usuario in usuario %}
+        <tr>
+            <td><p style="color: white;">{{ usuario.id }}</p></td>
+            <td><p style="color: white;">{{ usuario.nombre }}</p></td>
+            <td><p style="color: white;">{{ usuario.apellido }}</p></td>
+            <td><p style="color: white;">{{ usuario.email }}</p></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock contenido %}

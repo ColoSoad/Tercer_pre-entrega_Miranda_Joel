@@ -1,0 +1,40 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+
+{% block titulo %}
+    DOCUMENTALES
+{% endblock titulo %}
+
+
+{% block cabecera %}
+    <p style="color: red;">Listado de DOCUMENTALES</p>
+{% endblock cabecera %}
+    
+{% block contenido %}
+<section class="features-icons bg-black text-center">
+<a class="btn btn-danger" href='http://localhost:8000/aplicacion/documental_form/' role="button">DOCUMENTALES +</a>
+    <table class="table">
+        <thead>
+            <tr>               
+                <th><p style="color: red;">ID</p></th>
+                <th><p style="color: red;">Nombre</p></th>
+                <th><p style="color: red;">Año</p></th>
+                <th><p style="color: red;">Género</p></th>
+                <th><p style="color: red;">Plataforma</p></th>               
+            </tr>
+        </thead>
+        <tbody>
+        {% for documental in documental %}
+        <tr>
+            <td><p style="color: white;">{{ documental.id }}</p></td>
+            <td><p style="color: white;">{{ documental.nombre }}</p></td>
+            <td><p style="color: white;">{{ documental.año }}</p></td>
+            <td><p style="color: white;">{{ documental.genero }}</p></td>
+            <td><p style="color: white;">{{ documental.plataforma }}</p></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock contenido %}

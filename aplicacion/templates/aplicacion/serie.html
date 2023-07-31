@@ -1,0 +1,40 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+
+{% block titulo %}
+    SERIES
+{% endblock titulo %}
+
+
+{% block cabecera %}
+    <p style="color: red;">Listado de SERIES</p>
+{% endblock cabecera %}
+    
+{% block contenido %}
+<section class="features-icons bg-black text-center">
+<a class="btn btn-danger" href="http://localhost:8000/aplicacion/serie_form/" role="button">SERIES +</a>
+    <table class="table">
+        <thead>
+            <tr>               
+                <th><p style="color: red;">ID</p></th>
+                <th><p style="color: red;">Nombre</p></th>
+                <th><p style="color: red;">Año</p></th>
+                <th><p style="color: red;">Género</p></th>
+                <th><p style="color: red;">Plataforma</p></th>               
+            </tr>
+        </thead>
+        <tbody>
+        {% for serie in serie %}
+        <tr>
+            <td><p style="color: white;">{{ serie.id }}</p></td>
+            <td><p style="color: white;">{{ serie.nombre }}</p></td>
+            <td><p style="color: white;">{{ serie.año }}</p></td>
+            <td><p style="color: white;">{{ serie.genero }}</p></td>
+            <td><p style="color: white;">{{ serie.plataforma }}</p></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock contenido %}
